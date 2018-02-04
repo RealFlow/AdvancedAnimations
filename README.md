@@ -6,6 +6,7 @@ iOS Test application to learn to combine and coordinate between multiple animati
 The app references to WWDC2017 ["Advanced Animations with UIKit"](https://developer.apple.com/videos/play/wwdc2017/230/) Session.<br/>
 Ported to ObjC from [this](https://github.com/kane-liu/AdvancedAnimations) repo.
 
+<img src="https://github.com/RealFlow/AdvancedAnimations/blob/master/AdvancedAnimations/AdvancedAnimations/gif/advancedAnimations.gif" width="400" />
 
 - Features
 - [x] Using UIViewPropertyAnimator
