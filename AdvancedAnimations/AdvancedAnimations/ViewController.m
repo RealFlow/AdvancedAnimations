@@ -165,7 +165,7 @@ typedef NS_ENUM(NSInteger, State) {
     }
 }
 
-#pragma mark - Helper Methods (Animator transition)
+#pragma mark - Helper Methods (Animator Addition)
 
 // Frame Animation
 - (void)addFrameAnimator:(State)state duration:(NSTimeInterval)duration
@@ -186,7 +186,6 @@ typedef NS_ENUM(NSInteger, State) {
         switch (finalPosition) {
             case UIViewAnimatingPositionStart:
             {
-                // Fix blur animator bug don't know why
                 switch (state) {
                     case kStateExpanded:
                         [self.blurEffectView setEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark]];
@@ -331,6 +330,8 @@ typedef NS_ENUM(NSInteger, State) {
     [self.runningAnimators addObject:keyFrameAnimator];
 }
 
+#pragma mark - Helper Methods (Animator Processing)
+
 // Perform all animations with animators if not already running
 - (void)animateTransitionIfNeeded:(State)state duration:(NSTimeInterval)duration
 {
@@ -368,9 +369,6 @@ typedef NS_ENUM(NSInteger, State) {
         [propAnimator pauseAnimation];
     }
     
-    // TODO: CHECK THIS COMPLEX IF
-    //original:     progressWhenInterrupted = runningAnimators.first?.fractionComplete ?? 0
-    // ours
     self.progressWhenInterrupted = self.runningAnimators.firstObject ?
     self.runningAnimators.firstObject.fractionComplete ?: 0 : 0;
     
