@@ -9,7 +9,7 @@
 #import "ViewController.h"
 
 #define animatorDuration 1
-#define commentViewHeight 64
+#define commentViewHeight 60
 
 typedef NS_ENUM(NSInteger, State) {
     kStateCollapsed,
